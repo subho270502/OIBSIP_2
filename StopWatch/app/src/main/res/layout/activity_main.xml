@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Chronometer
+        android:id="@+id/chrono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="55sp"
+        android:textColor="@color/white"
+        android:format="%s%s%s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/chrono"
+        app:layout_constraintBottom_toTopOf="@+id/Guide"
+        android:layout_marginTop="15dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <ImageButton
+        android:id="@+id/start_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/start"
+        android:src="@drawable/ic_start_vector"
+        android:drawablePadding="15dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reset_btn"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Guide"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <ImageButton
+        android:id="@+id/reset_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="15dp"
+        android:src="@drawable/ic_reset_vector"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/reset"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/Guide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/start_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/pause_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="15.5dp"
+        android:layout_marginEnd="7.5dp"
+        android:drawablePadding="15dp"
+        android:src="@drawable/ic_pause_vector"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/pause"
+        android:text=""
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/lap_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Guide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/lap_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="7.5dp"
+        android:layout_marginEnd="15.5dp"
+        android:src="@drawable/ic_flag_vector"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/lap"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/Guide"
+        app:layout_constraintStart_toEndOf="@id/pause_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
